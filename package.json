@@ -5,6 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "clean-install": "rm -rf node_modules && npm install",
+    "postinstall": "npm rebuild bcrypt",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
