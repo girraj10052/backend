@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "clean-install": "rm -rf node_modules && npm install",
-    "postinstall": "npm rebuild bcrypt",
+    "postinstall": "chmod u+x node_modules/.bin/node-pre-gyp && npm rebuild bcrypt",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
@@ -23,6 +23,11 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.9.9",
     "nodemon": "^3.1.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "node-pre-gyp": "^1.0.0" 
+  },
+
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
