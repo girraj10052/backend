@@ -6,18 +6,8 @@ import Jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 
 const app = express() 
-app.use(cors({
-    origin: ["https://employee-management-using-react.vercel.app/"],
-    methods: ['GET', 'POST', 'PUT', "DELETE"],
-    credentials: true
-}))
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://employee-management-using-react.vercel.app");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Access-Control-Allow-Credentials", "true");
-    next();
-});
+app.use(cors());
+app.options("*", cors());
 app.use(express.json())
 app.use(cookieParser())
 app.get("/test", async (req, res)=>{console.log("hello");
