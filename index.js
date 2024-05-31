@@ -13,7 +13,7 @@ const app = express()
 // }))
 app.use(
     cors({
-      origin: "https://employee-management-using-react-7t9sw3mxf.vercel.app", // Specify the exact origin
+      origin: "https://employee-management-using-react-7t9sw3mxf.vercel.app/", // Specify the exact origin
       credentials: true,
       allowedHeaders: [
         'Origin',
